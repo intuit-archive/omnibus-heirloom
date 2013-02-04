@@ -1,0 +1,11 @@
+#!/bin/bash
+
+INSTALLER_DIR=/opt/intu/heirloom
+
+rm -f /usr/bin/heirloom
+
+ln -sf $INSTALLER_DIR/bin/heirloom /usr/bin
+
+echo "Thank you for installing Heirloom!"
+
+exit 0
