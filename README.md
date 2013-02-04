@@ -1,6 +1,6 @@
 ## omnibus-heirloom
 
-This contains the skelton for building Omnibus Chef packages.
+This contains the skelton for building Omnibus Heirloom packages.
 
 ## Build
 
