@@ -17,7 +17,7 @@ rvm use 1.9.3-p327@omnibus-heirloom --create
 # Install knife ec2
 gem install knife-ec2 --no-ri --no-rdoc
 if [ $? -ne 0 ]; then
-  clean_up_and_exit(1)
+  clean_up_and_exit 1
 fi
 
 # Create an instance
@@ -26,7 +26,7 @@ knife ec2 server create -c ./script/knife/config/knife.rb \
                         --groups=build \
                         --node-name='heirloom-omnibus-build'
 if [ $? -ne 0 ]; then
-  clean_up_and_exit(1)
+  clean_up_and_exit 1
 fi
 
-clean_up_and_exit(0)
+clean_up_and_exit 0
