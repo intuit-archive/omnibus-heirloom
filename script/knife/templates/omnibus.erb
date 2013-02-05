@@ -30,7 +30,7 @@ git clone -q https://github.com/intuit/omnibus-heirloom.git /var/tmp/omnibus-hei
 cd /var/tmp/omnibus-heirloom
 
 # Install Bundle
-bundle
+bundle install --quiet
 
 # Build heirloom RPM
 bundle exec rake projects:heirloom
