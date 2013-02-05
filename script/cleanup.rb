@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Script to cleanup any build instances which are launched
-# Keys off the name was assigned to the instance
+# Keys off the name that was assigned to the instance
 
 require 'fog'
 
