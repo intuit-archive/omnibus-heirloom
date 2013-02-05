@@ -6,7 +6,6 @@ This contains the skelton for building Omnibus Heirloom packages.
 
 To build the Heirloom RPM on the local system:
 
-    bundle exec rake clean
     bundle exec rake projects:heirloom
 
 ## Continuous Integration
