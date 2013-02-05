@@ -19,5 +19,5 @@ Omnibus-heirloom leverages knife-ec2 to create an instance which is used to buil
 * The git repo is cloned on the newly created build box.
 * The necessary omnibus tools are installed.
 * The RPM is built via omnibus.
-* The RPM is uploaded to S3.
+* The RPM is uploaded to S3. Any RPMs with the same name, version and build iteration are replaced.
 * The ci_setup script executes cleanup.rb to destroy any build boxes.
