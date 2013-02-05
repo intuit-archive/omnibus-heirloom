@@ -11,11 +11,8 @@ rvm use 1.9.3-p327@omnibus-heirloom --create
 # Exit On Any Error
 set -e
 
-# Install bundle
-bundle
+# Install knife ec2
+gem install knife-ec2 --no-ri --no-rdoc
 
-# Clean up old builds
-bundle exec rake clean
-
-# Build heirloom rpm
-bundle exec rake projects:heirloom
+# Create an instance
+knife ec2 server create -c ./script/knife/config/knife.rb --template-file=./script/knife/templates/omnibus.erb --groups=build
