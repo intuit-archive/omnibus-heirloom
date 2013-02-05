@@ -21,3 +21,9 @@ Omnibus-heirloom leverages knife-ec2 to create an instance which is used to buil
 * The RPM is built via omnibus.
 * The RPM is uploaded to S3. Any RPMs with the same name, version and build iteration are replaced.
 * The ci_setup script executes cleanup.rb to destroy any build boxes.
+
+## Requirements
+
+* AWS account with access to upload to S3 bucket and manage EC2 instances.
+* Credentials set as AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID
+* Ruby version 1.9.2 or higher
