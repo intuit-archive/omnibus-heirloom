@@ -34,5 +34,8 @@ bundle
 bundle exec rake projects:heirloom
 
 # Upload RPM to Omnibus package bucket
-s3cmd sync /var/cache/omnibus/pkg/heirloom*.rpm s3://intu-omnibus-packages-us-west-1/
+for rpm in $(ls -d /var/cache/omnibus/pkg/heirloom*.rpm); do
+  echo "Upload $rpm to s3://intu-omnibus-packages-us-west-1"
+  s3cmd --no-progress sync $rpm s3://intu-omnibus-packages-us-west-1/
+end
 '
