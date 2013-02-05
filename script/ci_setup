@@ -5,16 +5,22 @@ if [ -f ~/.jenkins.sh ]; then
   . ~/.jenkins.sh
 fi
 
+# Function to cleanup any running instances and exit
+function clean_up_and_exit {
+  ruby ./script/cleanup.sh
+  exit $1
+}
+
 # Set Ruby / Gemset
 rvm use 1.9.3-p327@omnibus-heirloom --create
 
-# Exit On Any Error
-set -e
-
 # Install knife ec2
-gem install knife-ec2 --no-ri --no-rdoc
+gem install knife-ec2 --no-ri --no-rdoc || clean_up_and_exit(1)
 
 # Create an instance
 knife ec2 server create -c ./script/knife/config/knife.rb \
                         --template-file ./script/knife/templates/omnibus.erb \
-                        --groups=build --node-name='heirloom-omnibus-build'
+                        --groups=build \
+                        --node-name='heirloom-omnibus-build' || clean_up_and_exit(1)
+
+clean_up_and_exit(0)
