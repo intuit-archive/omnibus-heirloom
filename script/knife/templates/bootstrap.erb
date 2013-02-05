@@ -1,0 +1,38 @@
+bash -c '
+# Exit On Error
+set -e
+
+# Add Intu Repo (For Ruby and S3cmd RPMs)
+cat > /etc/yum.repos.d/intu-packages-us-west-1.repo << EOS
+[intu-packages-us-west-1]
+name=Intuit Custom RPM Packages
+baseurl=http://s3-us-west-1.amazonaws.com/intu-packages-us-west-1/rhel/6/x86_64
+gpgcheck=0
+enabled=1
+EOS
+
+# Create s3cfg file
+cat > /root/.s3cfg << EOS
+access_key = <%= "#{ENV['AWS_ACCESS_KEY_ID']}" %>
+secret_key = <%= "#{ENV['AWS_SECRET_ACCESS_KEY']}" %>
+EOS
+
+# Install Required RPMs
+yum install -y intu-ruby git s3cmd rpm-build
+
+# Install bundler gem
+gem install bundler -v 1.2.2 --no-ri --no-rdoc
+
+# Clone The Repo
+git clone https://github.com/intuit/omnibus-heirloom.git /var/tmp/omnibus-heirloom
+cd /var/tmp/omnibus-heirloom
+
+# Install Bundle
+bundle
+
+# Build heirloom RPM
+bundle exec rake projects:heirloom
+
+# Upload RPM to Omnibus package bucket
+s3cmd sync /var/cache/omnibus/pkg/heirloom*.rpm s3://intu-omnibus-packages-us-west-1/
+'
