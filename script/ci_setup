@@ -15,4 +15,4 @@ set -e
 gem install knife-ec2 --no-ri --no-rdoc
 
 # Create an instance
-knife ec2 server create -c ./script/knife/config/knife.rb --template-file=./script/knife/templates/omnibus.erb --groups=build
+knife ec2 server create -c ./script/knife/config/knife.rb --template-file ./script/knife/templates/omnibus.erb --groups build
