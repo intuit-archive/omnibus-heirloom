@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Set Ruby / Gemset
+rvm use 1.9.3-p327@omnibus-heirloom --create
+
+# Exit On Any Error
+set -e
+
+# Install bundle
+bundle
+
+# Clean up old builds
+bundle exec rake clean
+
+# Build heirloom rpm
+bundle exec rake projects:heirloom
