@@ -9,6 +9,8 @@ fi
 function clean_up_and_exit {
   echo "--- Cleaning Up Build Instances ---"
   ruby ./script/cleanup.rb
+
+  echo "--- Build Completed With Status $1 ---"
   exit $1
 }
 
