@@ -7,7 +7,7 @@ fi
 
 # Function to cleanup any running instances and exit
 function clean_up_and_exit {
-  ruby ./script/cleanup.sh
+  ruby ./script/cleanup.rb
   exit $1
 }
 
