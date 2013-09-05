@@ -17,6 +17,10 @@ access_key = <%= "#{ENV['AWS_ACCESS_KEY_ID']}" %>
 secret_key = <%= "#{ENV['AWS_SECRET_ACCESS_KEY']}" %>
 EOS
 
+# Set version for build
+export version=<%= "#{ENV['version']}" %>
+export iteration=<%= "#{ENV['iteration']}" %>
+
 # Install Required RPMs
 yum install -y --quiet intu-ruby git s3cmd rpm-build
 
@@ -24,7 +28,7 @@ yum install -y --quiet intu-ruby git s3cmd rpm-build
 gem install bundler -v 1.2.2 --no-ri --no-rdoc --quiet
 
 # Clone The Repo
-git clone --quiet https://github.com/intuit/omnibus-heirloom.git /var/tmp/omnibus-heirloom
+git clone --quiet https://github.com/intuit/omnibus-heirloom.git --branch version_argument /var/tmp/omnibus-heirloom
 
 # Change directory to build cloned repo
 cd /var/tmp/omnibus-heirloom
