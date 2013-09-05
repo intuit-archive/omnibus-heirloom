@@ -5,14 +5,15 @@ This contains the skelton for building Omnibus Heirloom packages.
 ## Build
 
 To build the Heirloom RPM on the local system:
-* Set environment variables for version and iteration,
-  the version will correspond to gem version being pulled down
-  and will result in the package version. Iteration only corresponds
-  to the rpm iteration.
 
-    `export version=0.11.0`
-    `export iteration=1`
-    `bundle exec rake projects:heirloom`
+* The environment variables for version and iteration must be set,
+  the version will correspond to gem version being pulled down
+  and will result in the package version being created. Iteration only corresponds
+  to the rpm version iteration.
+
+        export version=0.11.0
+        export iteration=1
+        bundle exec rake projects:heirloom
 
 ## Continuous Integration
 
