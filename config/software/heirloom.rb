@@ -1,5 +1,5 @@
 name "heirloom"
-build_version   ENV['version']
+build_version "#{ENV['version']}"
 
 dependencies ["libxslt", "libxml2", "rubygems", "ruby"]
 
