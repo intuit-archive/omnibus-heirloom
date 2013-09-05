@@ -10,10 +10,9 @@ To build the Heirloom RPM on the local system:
   and will result in the package version. Iteration only corresponds
   to the rpm iteration.
 
-    export version=0.11.0
-    export iteration=1
-    
-    bundle exec rake projects:heirloom
+    `export version=0.11.0`
+    `export iteration=1`
+    `bundle exec rake projects:heirloom`
 
 ## Continuous Integration
 
