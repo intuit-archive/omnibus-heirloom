@@ -10,7 +10,7 @@ To build the heirloom RPM on the local system:
 	gem install bundler -v 1.2.2 --no-ri --no-rdoc --quiet
 	git clone --quiet https://github.com/intuit/omnibus-heirloom.git /var/tmp/omnibus-heirloom
 	cd /var/tmp/omnibus-heirloom
-	bundle install --quiet
+	bundle install --quiet --binstubs
 	bin/omnibus build project heirloom
 
 ## Continuous Integration
