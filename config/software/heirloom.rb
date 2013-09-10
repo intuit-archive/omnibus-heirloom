@@ -1,5 +1,5 @@
 name "heirloom"
-version "0.11.0"
+version ENV['version']
 
 dependencies ["libxslt", "libxml2", "rubygems", "ruby"]
 
