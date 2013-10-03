@@ -14,9 +14,6 @@ function clean_up_and_exit {
   exit $1
 }
 
-# Set Ruby / Gemset
-rvm use  2.0.0-p247@omnibus-heirloom --create
-
 # Install knife ec2
 gem install knife-ec2 --no-ri --no-rdoc --quiet
 if [ $? -ne 0 ]; then
