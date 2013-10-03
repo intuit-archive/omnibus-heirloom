@@ -5,6 +5,8 @@ if [ -f ~/.jenkins.sh ]; then
   . ~/.jenkins.sh
 fi
 
+bundle install
+
 # Function to cleanup any running instances and exit
 function clean_up_and_exit {
   echo "--- Cleaning Up Build Instances ---"
