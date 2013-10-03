@@ -12,7 +12,7 @@ RUBY_VERSION=2.0.0-p247
 rvm install ruby-$RUBY_VERSION --disable-binary --verify-downloads 1
 
 # Set ruby / gemset
-rvm use $RUBY_VERSION@lc --create
+rvm use $RUBY_VERSION@omnibus-heirloom --create
 
 # Build, upload and authorize artifact
 gem install heirloom -v 0.11.2 --no-ri --no-rdoc
