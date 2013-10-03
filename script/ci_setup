@@ -5,6 +5,7 @@ if [ -f ~/.jenkins.sh ]; then
   . ~/.jenkins.sh
 fi
 
+gem install bundle --no-ri --no-rdoc --queit
 bundle install
 
 # Function to cleanup any running instances and exit
