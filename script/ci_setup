@@ -4,7 +4,7 @@
 # version = version of aws-cli you are compiling
 # iteration = the iteration number of the RPM you are producing
 # NOTE: The RPM which is produced will overwrite the RPM on the S3 bucket on successful run
-export version=0.12.1
+export version=0.12.5
 export iteration=2
 
 # Remove Gemfile.lock if it exists
