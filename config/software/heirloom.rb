@@ -1,7 +1,7 @@
 name "heirloom"
 version ENV['version']
 
-dependencies ["libxslt", "libxml2", "rubygems", "ruby"]
+dependencies ["nokogiri", "rubygems", "ruby"]
 
 env = { "GEM_HOME" => nil, "GEM_PATH" => nil }
 
